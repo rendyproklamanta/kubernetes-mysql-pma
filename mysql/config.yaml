@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql-config-map
+data:
+  my.cnf: |-
+    [mysqld]
+    #port=3306
+    #bind-address = 0.0.0.0
+    character-set-server = utf8
+    collation-server = utf8_bin
+    default-storage-engine = INNODB
+    performance_schema = ON
+    max_allowed_packet = 500M
+    innodb_buffer_pool_size = 2G
+    interactive_timeout = 70
+    wait_timeout = 70
+    max_connections = 500
