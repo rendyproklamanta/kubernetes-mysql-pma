@@ -11,7 +11,7 @@ $ kubectl --kubeconfig=D:\kubeconfig\vultr\test.yaml apply -f deployment.yaml
 ```
 
 - Deployment with cluster :
-<br>
+
 Ref => https://github.com/rendyproklamanta/kubernetes-mysql-cluster
 ```
 $ kubectl --kubeconfig=D:\kubeconfig\vultr\test.yaml apply -f deployment-cluster.yaml
