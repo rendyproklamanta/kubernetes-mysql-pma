@@ -55,20 +55,20 @@ SELECT User, Host, Password FROM mysql.user;
 - If root has no password.Assign root password
 
 ```
-ALTER USER 'root'@'localhost' IDENTIFIED BY 'new-password';
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'your_password';
 ```
 
 - Create user root with host (%) to access from PMA
 
 ```
-CREATE USER 'root'@'%' IDENTIFIED BY 'new-password';
+CREATE USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'your_password';
 ```
 
 - Assign root privilege
 
 ```
-GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost';
-GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 ```
 
@@ -84,7 +84,6 @@ kubectl --kubeconfig=D:\kubeconfig\vultr\test.yaml delete configmap mysql-config
 kubectl --kubeconfig=D:\kubeconfig\vultr\test.yaml delete pvc mysql-pv-claim
 kubectl --kubeconfig=D:\kubeconfig\vultr\test.yaml delete pv mysql-pv-volume
 kubectl --kubeconfig=D:\kubeconfig\vultr\test.yaml delete secret mysql-secret
-
 ```
 
 <br>
@@ -93,15 +92,11 @@ kubectl --kubeconfig=D:\kubeconfig\vultr\test.yaml delete secret mysql-secret
 - If you editing config.yaml / ConfigMap, redeploy to make changes :
 
 ```
-
 kubectl --kubeconfig=D:\kubeconfig\vultr\test.yaml rollout restart deployment mysql
-
 ```
 
 - Show variable in mysql :
 
 ```
-
 SHOW VARIABLES LIKE 'max_connections';
-
 ```
