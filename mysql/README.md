@@ -1,3 +1,9 @@
+# Run MySql kubernetes Single-Instance (1 pod only)
+
+> Ref : https://kubernetes.io/docs/tasks/run-application/run-single-instance-stateful-application/
+
+<br>
+
 - Generate password using base64
 
 ```

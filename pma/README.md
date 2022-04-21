@@ -4,9 +4,20 @@
   <br>
   Edit host/hosts in ingress.yaml replace with domain
 
-- Deploy :
+- Deployment with single instance:
 
 ```
 $ kubectl --kubeconfig=D:\kubeconfig\vultr\test.yaml apply -f deployment.yaml
+```
+
+- Deployment with cluster :
+<br>
+Ref => https://github.com/rendyproklamanta/kubernetes-mysql-cluster
+```
+$ kubectl --kubeconfig=D:\kubeconfig\vultr\test.yaml apply -f deployment-cluster.yaml
+```
+
+- Deploy ingress :
+```
 $ kubectl --kubeconfig=D:\kubeconfig\vultr\test.yaml apply -f ingress.yaml
 ```
