@@ -29,7 +29,10 @@ spec:
             - name: PMA_PORT
               value: "3306"
             - name: MYSQL_ROOT_PASSWORD
-              value: "HMjWbskUvUOTuSGyU"
+              value: "HMjWbskUvUOTuSGyU"            
+            - name: UPLOAD_LIMIT
+              value: 300M
+              
 ---
 apiVersion: v1
 kind: Service
